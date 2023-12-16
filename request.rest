@@ -1,0 +1,39 @@
+GET http://localhost:5000/users
+
+### Register
+POST http://localhost:5000/register
+Content-Type: application/json
+
+{
+  "fullname": "Muhammad Rizky Lubis",
+  "email": "muhammadrizkylubisz@students.polmed.ac.id",
+  "password": "Akagami5321!@#",
+  "confirmPassword": "Akagami5321!@#"
+}
+
+### login
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "email": "muhammadrizkylubis@students.polmed.ac.id",
+  "password": "Akagami5321!@#"
+}
+
+### Courses
+
+POST http://localhost:5000/add-course
+Content-Type: application/json
+
+
+ {
+  "title": "Marketing Introduction",
+  "link": "https://myskill.id/course/marketing-introduction",
+  "organizer": "Myskill",
+  "category": "Digital Marketing",
+  "instructor": "Ryan Dwana",
+  "level": "Beginner ",
+  "rating": "4.66",
+  "fee": "Berbayar",
+  "description": "Dalam materi ini kamu akan belajar secara dasar dalam melakukan penempatan btrand. Kamu juga akan diberi pemahaman betapa pentingnya penempatan brand kepada konsumen kamu untuk meningkatkan daya tarik pada brand kamu. Serta kamu juga akan mempelajari bagaimana cara untuk membuat penempatan brand yang kuat dalam memastikan efektivitas pasar."
+ }
