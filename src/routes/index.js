@@ -1,6 +1,6 @@
 import express from "express"
-import { 
-    getUsers, 
+import {
+    getUsers,
     Register,
     Login,
     Logout
@@ -8,15 +8,14 @@ import {
 
 import {
     AddCourse,
-    getCourses 
+    getCourses
 } from "../controllers/Courses.js"
 
 import { verifyToken } from "../middleware/VerifyToken.js"
-import { refreshToken  } from "../controllers/RefreshToken.js"
+import { refreshToken } from "../controllers/RefreshToken.js"
 
 
 var router = express.Router()
-
 router.get("/users", verifyToken, getUsers)
 router.post("/register", Register)
 router.post("/login", Login)
