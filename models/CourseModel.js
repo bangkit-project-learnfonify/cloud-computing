@@ -19,10 +19,18 @@ function getCourseByCategory(category) {
         .eq('category', category)
 }
 
+
+function getListDistinctCategory() {
+    return db
+        .from('distinct_category')
+        .select('category')
+}
+
 const CourseModel = {
     insertCourses,
     getCourses,
-    getCourseByCategory
+    getCourseByCategory,
+    getListDistinctCategory
 }
 
 export default CourseModel;
