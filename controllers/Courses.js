@@ -33,4 +33,14 @@ export const getCourses = async (req, res) => {
     }
 }
 
+export const getCourseByCategory = async (req, res) => {
+    const { category } = req.params;
+    try {
+        const courses = await Courses.getCourseByCategory(category);
+        res.json(courses);
+    } catch (err) {
+        console.error(err.message);
+    }
+}
+
 

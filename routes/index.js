@@ -8,7 +8,8 @@ import {
 
 import {
     AddCourse,
-    getCourses
+    getCourses,
+    getCourseByCategory
 } from "../controllers/Courses.js"
 
 import { verifyToken } from "../middleware/VerifyToken.js"
@@ -21,6 +22,7 @@ router.post("/register", Register)
 router.post("/login", Login)
 router.post("/add-course", verifyToken, AddCourse)
 router.get("/courses", verifyToken, getCourses)
+router.get("/courses/:category", verifyToken, getCourseByCategory)
 router.get("/refresh-token", refreshToken)
 router.delete("/logout", Logout)
 export default router;

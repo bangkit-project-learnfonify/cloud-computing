@@ -12,16 +12,17 @@ function getCourses() {
         .select('*')
 }
 
-function getCourseById(id) {
+function getCourseByCategory(category) {
     return db
         .from('courses')
         .select('*')
-        .eq('id', id)
+        .eq('category', category)
 }
 
 const CourseModel = {
     insertCourses,
-    getCourses
+    getCourses,
+    getCourseByCategory
 }
 
 export default CourseModel;
