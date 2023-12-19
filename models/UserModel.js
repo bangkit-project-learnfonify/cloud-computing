@@ -6,10 +6,24 @@ function insertUsers({ fullname, email, password }) {
         .insert([{ fullname: fullname, email: email, password: password }])
 }
 
+function updateMajoringAndAge({ id, majoring, age }) {
+    return db
+        .from('users')
+        .update({ majoring: majoring, age: age })
+        .eq('id', id)
+}
+
+function getUserById(id) {
+    return db
+        .from('users')
+        .select('*')
+        .eq('id', id)
+}
+
 function getUsers() {
     return db
         .from('users')
-        .select('id, fullname, email')
+        .select('id, fullname, email, majoring, age')
 }
 
 function getUserByEmail(email) {
@@ -39,7 +53,9 @@ const UserModel = {
     getUsers,
     getUserByEmail,
     getUserByRefreshToken,
-    updateUserToken
+    updateUserToken,
+    getUserById,
+    updateMajoringAndAge
 }
 
 

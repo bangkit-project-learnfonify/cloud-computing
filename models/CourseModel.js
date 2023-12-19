@@ -12,6 +12,14 @@ function getCourses() {
         .select('*')
 }
 
+
+function getCourseById(id) {
+    return db
+        .from('courses')
+        .select('*')
+        .eq('id', id)
+}
+
 function getCourseByCategory(category) {
     return db
         .from('courses')
@@ -30,6 +38,7 @@ const CourseModel = {
     insertCourses,
     getCourses,
     getCourseByCategory,
+    getCourseById,
     getListDistinctCategory
 }
 

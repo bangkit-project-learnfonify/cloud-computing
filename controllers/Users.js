@@ -59,13 +59,13 @@ export const Login = async (req, res) => {
         const accessToken = jwt.sign(
             { userId, name, email },
             process.env.ACCESS_TOKEN_SECRET,
-            { expiresIn: "6h" }
+            { expiresIn: "1d" }
         );
 
         const refreshToken = jwt.sign(
             { userId, name, email },
             process.env.REFRESH_TOKEN_SECRET,
-            { expiresIn: "1d" }
+            { expiresIn: "1y" }
         );
 
         try {
@@ -82,7 +82,7 @@ export const Login = async (req, res) => {
             maxAge: 365 * 24 * 60 * 60 * 1000 
         });
 
-        res.json({ accessToken });
+        res.json({ userId , accessToken, name, email });
 
     } catch (err) {
         console.error(err.message);
@@ -92,11 +92,32 @@ export const Login = async (req, res) => {
 
 export const Logout = async (req, res) => {
     try {
-        await Users.updateUserToken({ id: req.userId, refreshToken: null });
+        await Users.updateUserToken({ id: req.body.userId, refreshToken: null });
         res.clearCookie("refreshToken");
         res.json({ message: "Logged out" });
     } catch (err) {
         console.error(err.message);
         res.json({ error: "Internal Server Error" });
+    }
+}
+
+export const getUserById = async (req, res) => {
+    const { id } = req.params;
+    try {
+        const users = await Users.getUserById(id);
+        res.json(users);
+    } catch (err) {
+        console.error(err.message);
+    }
+}
+
+export const updateMajoringAndAge = async (req, res) => {
+    const { id } = req.params;
+    const { majoring, age } = req.body;
+    try {
+        const users = await Users.updateMajoringAndAge({ id, majoring, age });
+        res.json(users);
+    } catch (err) {
+        console.error(err.message);
     }
 }

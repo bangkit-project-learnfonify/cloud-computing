@@ -25,7 +25,7 @@ export const refreshToken = async (req, res) => {
                 return res.json({ error: "Access denied" });
             }
             const accessToken = jwt.sign(payload, process.env.ACCESS_TOKEN_SECRET, {
-                expiresIn: "30s",
+                expiresIn: "1d",
             });
             res.json({ accessToken });
         });

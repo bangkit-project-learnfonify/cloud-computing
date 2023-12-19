@@ -53,3 +53,14 @@ export const getListDistinctCategory = async (req, res) => {
 }
 
 
+export const getCourseById = async (req, res) => {
+    const { id } = req.params;
+    try {
+        const courses = await Courses.getCourseById(id);
+        res.json(courses);
+    } catch (err) {
+        console.error(err.message);
+    }
+}
+
+

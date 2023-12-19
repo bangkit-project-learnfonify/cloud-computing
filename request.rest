@@ -1,6 +1,5 @@
 GET http://localhost:5000/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsIm5hbWUiOiJNdWhhbW1hZCBSaXpreSBMdWJpcyIsImVtYWlsIjoibXVoYW1tYWRyaXpreWx1YmlzQHN0dWRlbnRzLnBvbG1lZC5hYy5pZCIsImlhdCI6MTcwMjc5MjA5MywiZXhwIjoxNzAyNzkyMTIzfQ.KjdBBa1xCTDBYB4djiHguAw8Kc8Chl9aH_eQe7jTCoI
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsIm5hbWUiOiJNdWhhbW1hZCBSaXpreSBMdWJpcyIsImVtYWlsIjoibXVoYW1tYWRyaXpreWx1YmlzQHN0dWRlbnRzLnBvbG1lZC5hYy5pZCIsImlhdCI6MTcwMjk5NDc4OCwiZXhwIjoxNzAzMDE2Mzg4fQ.2mLcykpLkHZ7O6_oaSq5Hd8OloThHh2rPpdnEYikyN0
 
 
 ### Register
@@ -25,9 +24,23 @@ Content-Type: application/json
 
 ### Get Refresh Token  
 GET http://localhost:5000/refresh-token
+Content-Type: application/json
+
+
+### Get Course By Id
+GET http://localhost:5000/course/1
+Content-Type: application/json
+
+
 
 ### Logout
-DELETE http://localhost:5000/logout
+DELETE  http://localhost:5000/logout
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsIm5hbWUiOiJNdWhhbW1hZCBSaXpreSBMdWJpcyIsImVtYWlsIjoibXVoYW1tYWRyaXpreWx1YmlzQHN0dWRlbnRzLnBvbG1lZC5hYy5pZCIsImlhdCI6MTcwMjk5NDc4OCwiZXhwIjoxNzAzMDE2Mzg4fQ.2mLcykpLkHZ7O6_oaSq5Hd8OloThHh2rPpdnEYikyN0
+Content-Type: application/json
+
+{
+  "userId": 6
+}
 
 
 
