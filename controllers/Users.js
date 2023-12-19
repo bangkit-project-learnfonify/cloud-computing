@@ -56,6 +56,8 @@ export const Login = async (req, res) => {
         const userId = user.data[0].id;
         const name = user.data[0].fullname;
         const email = user.data[0].email;
+        const majoring = user.data[0].majoring;
+        const age = user.data[0].age;
         const accessToken = jwt.sign(
             { userId, name, email },
             process.env.ACCESS_TOKEN_SECRET,
@@ -82,7 +84,8 @@ export const Login = async (req, res) => {
             maxAge: 365 * 24 * 60 * 60 * 1000 
         });
 
-        res.json({ userId , accessToken, name, email });
+        
+        res.json({ userId, email, name, accessToken, majoring, age });
 
     } catch (err) {
         console.error(err.message);
