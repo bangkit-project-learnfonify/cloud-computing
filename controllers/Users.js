@@ -124,3 +124,23 @@ export const updateMajoringAndAge = async (req, res) => {
         console.error(err.message);
     }
 }
+
+export const insertUserRating = async (req, res) => {
+    const { id } = req.params;
+    const { rating } = req.body;
+    try {
+        const users = await Users.insertUserRating({ id, rating });
+        res.json(users);
+    } catch (err) {
+        console.error(err.message);
+    }
+}
+
+export const getUserRating = async (req, res) => {
+    try {
+        const users = await Users.getUserRating();
+        res.json(users);
+    } catch (err) {
+        console.error(err.message);
+    }
+}

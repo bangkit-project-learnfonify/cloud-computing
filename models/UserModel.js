@@ -23,7 +23,7 @@ function getUserById(id) {
 function getUsers() {
     return db
         .from('users')
-        .select('id, fullname, email, majoring, age')
+        .select('*')
 }
 
 function getUserByEmail(email) {
@@ -48,6 +48,19 @@ function getUserByRefreshToken(refreshToken) {
         .eq('refresh_token', refreshToken)
 }
 
+function insertUserRating({ user_id, course_id, user_rating }) {
+    return db
+        .from('user_rating')
+        .insert([{ user_id: user_id, course_id: course_id, user_rating: user_rating }])
+
+}
+
+function getUserRating() {
+    return db
+        .from('user_rating')
+        .select('*')
+}
+
 const UserModel = {
     insertUsers,
     getUsers,
@@ -55,7 +68,9 @@ const UserModel = {
     getUserByRefreshToken,
     updateUserToken,
     getUserById,
-    updateMajoringAndAge
+    updateMajoringAndAge,
+    insertUserRating,
+    getUserRating
 }
 
 
