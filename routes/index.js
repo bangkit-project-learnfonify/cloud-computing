@@ -36,6 +36,6 @@ router.get("/ml/user-rating", getUserRating)
 router.post("/insert-rating", insertUserRating)
 router.get("/courses/:category", verifyToken, getCourseByCategory)
 router.get("/list-category", verifyToken, getListDistinctCategory)
-router.get("/refresh-token", refreshToken)
+router.post("/refresh-token", refreshToken)
 router.delete("/logout", verifyToken, Logout)
 export default router;
