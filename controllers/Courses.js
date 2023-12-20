@@ -54,7 +54,7 @@ export const getListDistinctCategory = async (req, res) => {
 
 
 export const getCourseById = async (req, res) => {
-    const { id } = req.params;
+    const { id } = req.params
     try {
         const courses = await Courses.getCourseById(id);
         res.json(courses);
@@ -62,5 +62,8 @@ export const getCourseById = async (req, res) => {
         console.error(err.message);
     }
 }
+
+
+
 
 

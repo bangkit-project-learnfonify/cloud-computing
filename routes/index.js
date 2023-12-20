@@ -18,6 +18,10 @@ import {
     getListDistinctCategory
 } from "../controllers/Courses.js"
 
+import {
+    getTopCourse
+} from "../controllers/MLTopCourse.js"
+
 import { verifyToken } from "../middleware/VerifyToken.js"
 import { refreshToken } from "../controllers/RefreshToken.js"
 
@@ -36,6 +40,8 @@ router.get("/ml/user-rating", getUserRating)
 router.post("/insert-rating", insertUserRating)
 router.get("/courses/:category", verifyToken, getCourseByCategory)
 router.get("/list-category", verifyToken, getListDistinctCategory)
+router.get("/top-courses/:id", getTopCourse)
 router.post("/refresh-token", refreshToken)
 router.delete("/logout", verifyToken, Logout)
+
 export default router;

@@ -32,6 +32,11 @@ GET http://localhost:5000/course/1
 Content-Type: application/json
 
 
+### Get Top Course
+GET http://localhost:5000/top-courses/4
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExMiwibmFtZSI6Ik1VSEFNTUFEIFJJWktZIExVQklTIiwiZW1haWwiOiJtdWhhbW1hZHJpemt5bHViaXNAc3R1ZGVudHMucG9sbWVkLmFjLmlkIiwiaWF0IjoxNzAzMDgyMzY0LCJleHAiOjE3MDMxNjg3NjR9.N5gp3WtdRFiGmdBRIIvlA6sfn0HmJFuxDWmudlbbcgE"
+
 
 ### Logout
 DELETE  http://localhost:5000/logout
