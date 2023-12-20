@@ -35,11 +35,11 @@ Content-Type: application/json
 
 ### Logout
 DELETE  http://localhost:5000/logout
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsIm5hbWUiOiJNdWhhbW1hZCBSaXpreSBMdWJpcyIsImVtYWlsIjoibXVoYW1tYWRyaXpreWx1YmlzQHN0dWRlbnRzLnBvbG1lZC5hYy5pZCIsImlhdCI6MTcwMjk5NDc4OCwiZXhwIjoxNzAzMDE2Mzg4fQ.2mLcykpLkHZ7O6_oaSq5Hd8OloThHh2rPpdnEYikyN0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExMiwibmFtZSI6Ik1VSEFNTUFEIFJJWktZIExVQklTIiwiZW1haWwiOiJtdWhhbW1hZHJpemt5bHViaXNAc3R1ZGVudHMucG9sbWVkLmFjLmlkIiwiaWF0IjoxNzAzMDYyNDcxLCJleHAiOjE3MDMxNDg4NzF9._t-B2-43Yvgbsar0EwwNeUo8h_b1MF1n4ImkH92_jXU
 Content-Type: application/json
 
 {
-  "userId": 6
+  "userId": 112
 }
 
 

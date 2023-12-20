@@ -85,7 +85,7 @@ export const Login = async (req, res) => {
         });
 
         
-        res.json({ userId, email, name, accessToken, majoring, age });
+        res.json({ userId, email, name, accessToken, refreshToken, majoring, age });
 
     } catch (err) {
         console.error(err.message);
