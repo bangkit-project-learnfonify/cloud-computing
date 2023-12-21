@@ -22,20 +22,32 @@ Content-Type: application/json
   "password": "Akagami5321!@#"
 }
 
+
+### add rating
+POST http://localhost:5000/add-rating
+Authorization: Bareer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExMiwibmFtZSI6Ik1VSEFNTUFEIFJJWktZIExVQklTIiwiZW1haWwiOiJtdWhhbW1hZHJpemt5bHViaXNAc3R1ZGVudHMucG9sbWVkLmFjLmlkIiwiaWF0IjoxNzAzMTU3NTUxLCJleHAiOjE3MDMyNDM5NTF9.Cebax12t3SXSlqKQ7lBGXz-zM9bwL2ZHwGtwM1oVDKo
+Content-Type: application/json
+
+{
+  "user_id": 6,
+  "course_id": 1,
+  "user_rating": 4
+}
+
 ### Get Refresh Token  
 GET http://localhost:5000/refresh-token
 Content-Type: application/json
 
 
 ### Get Course By Id
-GET http://localhost:5000/course/1
+GET http://localhost:5000/courses
 Content-Type: application/json
+Authorization: Bareer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExMiwibmFtZSI6Ik1VSEFNTUFEIFJJWktZIExVQklTIiwiZW1haWwiOiJtdWhhbW1hZHJpemt5bHViaXNAc3R1ZGVudHMucG9sbWVkLmFjLmlkIiwiaWF0IjoxNzAzMTU3NTUxLCJleHAiOjE3MDMyNDM5NTF9.Cebax12t3SXSlqKQ7lBGXz-zM9bwL2ZHwGtwM1oVDKo
 
-
-### Get Top Course
+### Get Top Course 
 GET http://localhost:5000/top-courses/4
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExMiwibmFtZSI6Ik1VSEFNTUFEIFJJWktZIExVQklTIiwiZW1haWwiOiJtdWhhbW1hZHJpemt5bHViaXNAc3R1ZGVudHMucG9sbWVkLmFjLmlkIiwiaWF0IjoxNzAzMDgyMzY0LCJleHAiOjE3MDMxNjg3NjR9.N5gp3WtdRFiGmdBRIIvlA6sfn0HmJFuxDWmudlbbcgE"
+Authorization: Bareer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExMiwibmFtZSI6Ik1VSEFNTUFEIFJJWktZIExVQklTIiwiZW1haWwiOiJtdWhhbW1hZHJpemt5bHViaXNAc3R1ZGVudHMucG9sbWVkLmFjLmlkIiwiaWF0IjoxNzAzMTU3NTUxLCJleHAiOjE3MDMyNDM5NTF9.Cebax12t3SXSlqKQ7lBGXz-zM9bwL2ZHwGtwM1oVDKo
 
 
 ### Logout

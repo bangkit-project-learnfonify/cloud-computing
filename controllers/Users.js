@@ -81,10 +81,10 @@ export const Login = async (req, res) => {
 
         res.cookie("refreshToken", refreshToken, {
             httpOnly: true,
-            maxAge: 365 * 24 * 60 * 60 * 1000 
+            maxAge: 365 * 24 * 60 * 60 * 1000
         });
 
-        
+
         res.json({ userId, email, name, accessToken, refreshToken, majoring, age });
 
     } catch (err) {
@@ -126,10 +126,9 @@ export const updateMajoringAndAge = async (req, res) => {
 }
 
 export const insertUserRating = async (req, res) => {
-    const { id } = req.params;
-    const { rating } = req.body;
+    const { user_id, course_id, user_rating } = req.body;
     try {
-        const users = await Users.insertUserRating({ id, rating });
+        const users = await Users.insertUserRating({ user_id, course_id, user_rating });
         res.json(users);
     } catch (err) {
         console.error(err.message);
